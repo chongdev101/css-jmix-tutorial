@@ -3,12 +3,12 @@
         caption="msg://productScreen.caption">
 
     <data>
-        <collection id="customersDc"
-                    class="com.company.cssjmixtutorial.entity.User"
+        <collection id="productsDc"
+                    class="com.company.cssjmixtutorial.entity.Product"
                     fetchPlan="_local">
-            <loader id="customersLoader">
+            <loader id="productsLoader">
                 <query>
-                    <![CDATA[select e from user_ e]]>
+                    <![CDATA[select e from product e]]>
                 </query>
             </loader>
         </collection>
@@ -17,20 +17,20 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
 
-    <layout expand="customersDataGrid">
-        <dataGrid id="customersDataGrid"
-                  dataContainer="customersDc"
+    <layout expand="productsDataGrid">
+        <dataGrid id="productsDataGrid"
+                  dataContainer="productsDc"
                   width="100%">
             <actions>
                 <action id="create" type="create"/>
             </actions>
             <columns>
-                <column property="firstName"/>
-                <column property="lastName"/>
-                <column property="active"/>
+                <column property="id"/>
+                <column property="productCode"/>
+                <column property="productName"/>
             </columns>
             <buttonsPanel>
-                <button action="customersDataGrid.create"/>
+                <button action="productsDataGrid.create"/>
             </buttonsPanel>
         </dataGrid>
     </layout>
