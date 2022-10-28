@@ -1,0 +1,16 @@
+@import "cpf-defaults";
+// @import "addons";
+@import "cpf";
+
+.cpf {
+  // @include addons;
+  @include cpf;
+}
+
+.pos-esso {
+  .jmix-workarea {
+    box-shadow: none;
+  }
+
+  @import "pos-esso";
+}

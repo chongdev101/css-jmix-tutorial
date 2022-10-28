@@ -1,9 +1,7 @@
 package com.company.cssjmixtutorial.screen.main;
 
 import io.jmix.ui.ScreenTools;
-import io.jmix.ui.component.AppWorkArea;
-import io.jmix.ui.component.Button;
-import io.jmix.ui.component.Window;
+import io.jmix.ui.component.*;
 import io.jmix.ui.component.mainwindow.Drawer;
 import io.jmix.ui.icon.JmixIcon;
 import io.jmix.ui.navigation.Route;
@@ -24,26 +22,30 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
 
     @Autowired
     private AppWorkArea workArea;
-    @Autowired
-    private Drawer drawer;
-    @Autowired
-    private Button collapseDrawerButton;
 
+    private boolean isActive = false;
+    @Autowired
+    private CssLayout sidebar;
+
+//    @Autowired
+//    private Drawer drawer;
+//    @Autowired
+//    private Button collapseDrawerButton;
 
     @Override
     public AppWorkArea getWorkArea() {
         return workArea;
     }
 
-    @Subscribe("collapseDrawerButton")
-    private void onCollapseDrawerButtonClick(Button.ClickEvent event) {
-        drawer.toggle();
-        if (drawer.isCollapsed()) {
-            collapseDrawerButton.setIconFromSet(JmixIcon.CHEVRON_RIGHT);
-        } else {
-            collapseDrawerButton.setIconFromSet(JmixIcon.CHEVRON_LEFT);
-        }
-    }
+//    @Subscribe("collapseDrawerButton")
+//    private void onCollapseDrawerButtonClick(Button.ClickEvent event) {
+//        drawer.toggle();
+//        if (drawer.isCollapsed()) {
+//            collapseDrawerButton.setIconFromSet(JmixIcon.CHEVRON_RIGHT);
+//        } else {
+//            collapseDrawerButton.setIconFromSet(JmixIcon.CHEVRON_LEFT);
+//        }
+//    }
 
     @Subscribe
     public void onAfterShow(AfterShowEvent event) {
@@ -52,4 +54,18 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
 
         screenTools.handleRedirect();
     }
+
+    @Subscribe("hambergerMenu")
+    public void onHambergerMenuLayoutClick(LayoutClickNotifier.LayoutClickEvent event) {
+        isActive = !isActive;
+
+        if(isActive){
+            sidebar.addStyleName("is-active");
+        }
+        else {
+            sidebar.removeStyleName("is-active");
+        }
+    }
+
+
 }

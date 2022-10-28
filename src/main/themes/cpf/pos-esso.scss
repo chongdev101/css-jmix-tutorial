@@ -1,0 +1,152 @@
+$sidebar-header-height: 72px;
+$sidebar-min: 72px;
+$sidebar-max: 426px;
+$sidebar-gap: 10px;
+$sidebar-padding: 16px;
+
+.color-pimary {
+  color: #2d2d70;
+}
+
+.pos-esso-layout {
+  display: grid;
+  /* height: 100%; */
+  min-height: 100vh;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "sb hd"
+    "sb main";
+}
+
+.pos-esso-header {
+  grid-area: hd;
+
+  height: 96px;
+  background: #ffffff;
+}
+
+.pos-esso-sidebar {
+  grid-area: sb;
+  height: 100%;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 6px #e5e5e5, 0px 0px 1px rgba(33, 37, 41, 0.32);
+  width: $sidebar-min;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 200;
+
+  &.is-active {
+    width: $sidebar-max;
+
+    .sidebar-nav-link{
+        gap: 16px;
+        padding: 12px 16px;
+    }
+    .sidebar-nav-text{
+        display: block  ;
+    }
+  }
+
+  .sidebar-header {
+    // height: $sidebar-header-height;
+    background-color: #eaf5f9;
+    padding: $sidebar-padding;
+  }
+  .sidebar-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+  .sidebar-footer {
+    height: $sidebar-header-height;
+    padding: $sidebar-padding;
+  }
+
+  .hamberger-menu {
+    width: 40px;
+    height: 40px;
+    background-image: url(./icons/hamberger-menu.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      // border-radius: 50%;
+    }
+  }
+}
+
+.pos-esso-main {
+  grid-area: main;
+
+  .jmix-workarea {
+    display: block;
+
+    > div {
+      padding: 0;
+    }
+  }
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  
+  border-radius: 16px;
+}
+
+.sidebar-nav-link:hover {
+  background-color: #eaf5f9;
+}
+
+.sidebar-nav-link.active {
+  background-color: #3750a1;
+  color: #fff;
+}
+
+.sidebar-nav-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+
+//   background-color: #fff;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &.home {
+    background-image: url(./icons/home.png);
+  }
+  &.Discount {
+    background-image: url(./icons/Discount.png);
+  }
+  &.Paid-Bill {
+    background-image: url(./icons/Paid-Bill.png);
+  }
+  &.Settings {
+    background-image: url(./icons/Settings.png);
+  }
+  &.report {
+    background-image: url(./icons/report.png);
+  }
+}
+
+.sidebar-nav-text {
+  flex: 1;
+  display: none;
+}

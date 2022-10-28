@@ -1,49 +1,73 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://application.caption">
 
-    <layout>
-        <cssLayout id="horizontalWrap"
-                   stylename="jmix-drawer-layout">
-            <drawer id="drawer" expandOnHover="true">
-                <cssLayout id="appTitleBox"
-                           stylename="jmix-drawer-header"
-                           width="100%">
-                    <image id="logoImage"
-                           stylename="app-icon"
-                           scaleMode="SCALE_DOWN">
-                        <resource>
-                            <theme path="branding/app-icon-menu.svg"/>
-                        </resource>
-                    </image>
-                    <label id="appTitleLabel"
-                           stylename="app-title"
-                           value="msg://application.logoLabel"/>
+    <layout stylename="pos-esso">
+        <cssLayout stylename="pos-esso-layout">
+
+            <!--  HEADER-->
+            <cssLayout stylename="pos-esso-header">
+                <label value="HEADER" />
+            </cssLayout>
+
+<!--         SIDEBAR   -->
+            <cssLayout id="sidebar" stylename="pos-esso-sidebar">
+                <cssLayout stylename="sidebar-header">
+                    <cssLayout id="hambergerMenu" stylename="hamberger-menu"></cssLayout>
                 </cssLayout>
-                <sideMenu id="sideMenu"
-                          width="100%"
-                          stylename="jmix-drawer-content"/>
-                <timeZoneIndicator id="timeZoneIndicator"
-                                   align="MIDDLE_CENTER"/>
-                <cssLayout id="controlBox"
-                           stylename="jmix-drawer-footer"
-                           width="100%">
-                    <button id="collapseDrawerButton"
-                            icon="CHEVRON_LEFT"
-                            stylename="jmix-drawer-collapse-button"
-                            description="msg://sideMenuCollapse"/>
-                    <userIndicator id="userIndicator"
-                                   align="MIDDLE_CENTER"/>
-                    <logoutButton id="logoutButton"
-                                  icon="SIGN_OUT"
-                                  description="msg://logoutBtnDescription"/>
+                <cssLayout stylename="sidebar-body">
+
+                    <cssLayout stylename="sidebar-nav">
+                        <cssLayout stylename="sidebar-nav-item">
+                            <cssLayout stylename="sidebar-nav-link">
+                                <cssLayout stylename="sidebar-nav-icon home"></cssLayout>
+                                <label stylename="sidebar-nav-text" value="หน้าหลัก" />
+                            </cssLayout>
+                        </cssLayout>
+
+                        <cssLayout stylename="sidebar-nav-item">
+                            <cssLayout stylename="sidebar-nav-link">
+                                <cssLayout stylename="sidebar-nav-icon Paid-Bill"></cssLayout>
+                                <label stylename="sidebar-nav-text" value="จัดการสินค้า" />
+                            </cssLayout>
+                        </cssLayout>
+
+                        <cssLayout stylename="sidebar-nav-item">
+                            <cssLayout stylename="sidebar-nav-link ">
+                                <cssLayout stylename="sidebar-nav-icon Discount"></cssLayout>
+                                <label stylename="sidebar-nav-text" value="โปรโมชั่น" />
+                            </cssLayout>
+                        </cssLayout>
+
+                        <cssLayout stylename="sidebar-nav-item">
+                            <cssLayout stylename="sidebar-nav-link">
+                                <cssLayout stylename="sidebar-nav-icon"></cssLayout>
+                                <label stylename="sidebar-nav-text" value="รายงาน"></label>
+                            </cssLayout>
+                        </cssLayout>
+
+                        <cssLayout stylename="sidebar-nav-item">
+                            <cssLayout stylename="sidebar-nav-link">
+                                <cssLayout stylename="sidebar-nav-icon report"></cssLayout>
+                                <label stylename="sidebar-nav-text" value="การตั้งค่า" />
+                            </cssLayout>
+                        </cssLayout>
+                    </cssLayout>
+
+
                 </cssLayout>
-            </drawer>
-            <workArea id="workArea"
-                      stylename="jmix-workarea"
-                      height="100%">
-                <initialLayout spacing="true" margin="true">
-                </initialLayout>
-            </workArea>
+                <cssLayout stylename="sidebar-footer"><label value="footer" /></cssLayout>
+            </cssLayout>
+
+<!--         MAIN   -->
+
+            <cssLayout stylename="pos-esso-main">
+                <workArea id="workArea"
+                          stylename="jmix-workarea"
+                          height="100%">
+                    <initialLayout spacing="true" margin="true">
+                    </initialLayout>
+                </workArea>
+            </cssLayout>
         </cssLayout>
     </layout>
 </window>
