@@ -8,9 +8,17 @@
 }
 
 .pos-esso {
+  .jmix-headline-container{
+    display: none;
+  }
   .jmix-workarea {
     box-shadow: none;
+  }
+  .jmix-app-window-wrap{
+    padding: 0;
   }
 
   @import "pos-esso";
 }
+
+@import "pos-esso-responsive";

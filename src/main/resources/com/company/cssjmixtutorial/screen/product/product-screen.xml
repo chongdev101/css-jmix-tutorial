@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://productScreen.caption">
+
+    <data>
+        <collection id="customersDc"
+                    class="com.company.cssjmixtutorial.entity.User"
+                    fetchPlan="_local">
+            <loader id="customersLoader">
+                <query>
+                    <![CDATA[select e from user_ e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+
+    <layout expand="customersDataGrid">
+        <dataGrid id="customersDataGrid"
+                  dataContainer="customersDc"
+                  width="100%">
+            <actions>
+                <action id="create" type="create"/>
+            </actions>
+            <columns>
+                <column property="firstName"/>
+                <column property="lastName"/>
+                <column property="active"/>
+            </columns>
+            <buttonsPanel>
+                <button action="customersDataGrid.create"/>
+            </buttonsPanel>
+        </dataGrid>
+    </layout>
+</window>

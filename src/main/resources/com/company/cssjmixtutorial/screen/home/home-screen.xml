@@ -2,6 +2,71 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://homeScreen.caption">
     <layout>
-        <label value="Home Screen" />
+
+<!--     title   -->
+        <cssLayout stylename="screenContainer">
+        <cssLayout stylename="pageTitle">
+            <label value="เพิ่มสินค้า" />
+        </cssLayout>
+
+        <!--   sub  title   -->
+        <cssLayout stylename="pageSubTitle">
+            <label value="รายละเอียดสินค้า" />
+        </cssLayout>
+
+        <!--   card Container   -->
+        <cssLayout stylename="cardContainer">
+
+            <cssLayout stylename="card">
+                <cssLayout stylename="cardHeader" id="cardHeader">
+                    <label stylename="cardHeaderTitle" value="ข้อมูลสินค้า" />
+                    <cssLayout stylename="cardHeaderArrow"></cssLayout>
+                </cssLayout>
+
+                <cssLayout id="cardContent" stylename="cardContent" visible="false">
+                    <cssLayout stylename="row">
+                        <cssLayout stylename="col-sm">
+                            <label value="รหัสสินค้า" />
+                        </cssLayout>
+                    </cssLayout>
+
+                    <cssLayout stylename="row">
+                        <cssLayout stylename="col-2">
+                            <label value="ชื่อสินค้าท้องถิ่น" />
+                        </cssLayout>
+
+                        <cssLayout stylename="col-2">
+                            <label value="ชื่อภาษาอังกฤษ" />
+                        </cssLayout>
+
+                        <cssLayout stylename="col-1">
+                            <label value="ชื่อสั้น" />
+                        </cssLayout>
+                    </cssLayout>
+
+                    <cssLayout stylename="row">
+                        <cssLayout stylename="col-sm">
+                            <label value="วันที่มีผล" />
+                        </cssLayout>
+
+                        <cssLayout stylename="col-sm">
+                            <label value="วันที่ระงับ" />
+                        </cssLayout>
+
+                        <cssLayout stylename="col-sm">
+                            <label value="อายุสินค้า" />
+                        </cssLayout>
+                    </cssLayout>
+                </cssLayout>
+            </cssLayout>
+
+            <cssLayout stylename="card">
+                <cssLayout stylename="cardHeader">
+                    <label value="ข้อมูลเกี่ยวกับภาษี" />
+                </cssLayout>
+                <cssLayout stylename="cardContent" />
+            </cssLayout>
+        </cssLayout>
+        </cssLayout>
     </layout>
 </window>

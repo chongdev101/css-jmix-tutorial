@@ -18,14 +18,14 @@
 
                     <cssLayout stylename="sidebar-nav">
                         <cssLayout stylename="sidebar-nav-item">
-                            <cssLayout stylename="sidebar-nav-link">
+                            <cssLayout stylename="sidebar-nav-link" id="navHomepage">
                                 <cssLayout stylename="sidebar-nav-icon home"></cssLayout>
                                 <label stylename="sidebar-nav-text" value="หน้าหลัก" />
                             </cssLayout>
                         </cssLayout>
 
                         <cssLayout stylename="sidebar-nav-item">
-                            <cssLayout stylename="sidebar-nav-link">
+                            <cssLayout stylename="sidebar-nav-link active" id="navProduct">
                                 <cssLayout stylename="sidebar-nav-icon Paid-Bill"></cssLayout>
                                 <label stylename="sidebar-nav-text" value="จัดการสินค้า" />
                             </cssLayout>
@@ -40,14 +40,14 @@
 
                         <cssLayout stylename="sidebar-nav-item">
                             <cssLayout stylename="sidebar-nav-link">
-                                <cssLayout stylename="sidebar-nav-icon"></cssLayout>
+                                <cssLayout stylename="sidebar-nav-icon report"></cssLayout>
                                 <label stylename="sidebar-nav-text" value="รายงาน"></label>
                             </cssLayout>
                         </cssLayout>
 
                         <cssLayout stylename="sidebar-nav-item">
                             <cssLayout stylename="sidebar-nav-link">
-                                <cssLayout stylename="sidebar-nav-icon report"></cssLayout>
+                                <cssLayout stylename="sidebar-nav-icon Settings"></cssLayout>
                                 <label stylename="sidebar-nav-text" value="การตั้งค่า" />
                             </cssLayout>
                         </cssLayout>
