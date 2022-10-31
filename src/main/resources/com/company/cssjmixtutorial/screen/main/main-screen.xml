@@ -11,51 +11,67 @@
 
 <!--         SIDEBAR   -->
             <cssLayout id="sidebar" stylename="pos-esso-sidebar">
-                <cssLayout stylename="sidebar-header">
-                    <cssLayout id="hambergerMenu" stylename="hamberger-menu"></cssLayout>
-                </cssLayout>
-                <cssLayout stylename="sidebar-body">
 
-                    <cssLayout stylename="sidebar-nav">
-                        <cssLayout stylename="sidebar-nav-item">
-                            <cssLayout stylename="sidebar-nav-link" id="navHomepage">
-                                <cssLayout stylename="sidebar-nav-icon home"></cssLayout>
-                                <label stylename="sidebar-nav-text" value="หน้าหลัก" />
+
+<!--                backdrop-->
+
+                <cssLayout stylename="sidebar-drawer">
+                    <cssLayout stylename="sidebar-backdrop" id="backdropHandler"></cssLayout>
+
+    <!--              sidebar  -->
+                    <cssLayout stylename="sidebar-container">
+
+                        <cssLayout stylename="sidebar-header">
+                            <cssLayout id="hambergerMenu" stylename="hamberger-menu"></cssLayout>
+                        </cssLayout>
+
+                        <cssLayout stylename="sidebar-body">
+
+                        <cssLayout stylename="sidebar-nav" id="sidebarNav">
+
+                            <cssLayout stylename="sidebar-nav-item">
+                                <cssLayout stylename="sidebar-nav-link" id="navHomepage">
+                                    <cssLayout stylename="sidebar-nav-icon home"></cssLayout>
+                                    <label stylename="sidebar-nav-text" value="หน้าหลัก" />
+                                </cssLayout>
+                            </cssLayout>
+
+                            <cssLayout stylename="sidebar-nav-item">
+                                <cssLayout stylename="sidebar-nav-link active" id="navProduct">
+                                    <cssLayout stylename="sidebar-nav-icon Paid-Bill"></cssLayout>
+                                    <label stylename="sidebar-nav-text" value="จัดการสินค้า" />
+                                </cssLayout>
+                            </cssLayout>
+
+                            <cssLayout stylename="sidebar-nav-item">
+                                <cssLayout stylename="sidebar-nav-link" id="navDiscount">
+                                    <cssLayout stylename="sidebar-nav-icon Discount"></cssLayout>
+                                    <label stylename="sidebar-nav-text" value="โปรโมชั่น" />
+                                </cssLayout>
+                            </cssLayout>
+
+                            <cssLayout stylename="sidebar-nav-item">
+                                <cssLayout stylename="sidebar-nav-link">
+                                    <cssLayout stylename="sidebar-nav-icon report"></cssLayout>
+                                    <label stylename="sidebar-nav-text" value="รายงาน"></label>
+                                </cssLayout>
+                            </cssLayout>
+
+                            <cssLayout stylename="sidebar-nav-item">
+                                <cssLayout stylename="sidebar-nav-link">
+                                    <cssLayout stylename="sidebar-nav-icon Settings"></cssLayout>
+                                    <label stylename="sidebar-nav-text" value="การตั้งค่า" />
+                                </cssLayout>
                             </cssLayout>
                         </cssLayout>
 
-                        <cssLayout stylename="sidebar-nav-item">
-                            <cssLayout stylename="sidebar-nav-link active" id="navProduct">
-                                <cssLayout stylename="sidebar-nav-icon Paid-Bill"></cssLayout>
-                                <label stylename="sidebar-nav-text" value="จัดการสินค้า" />
-                            </cssLayout>
-                        </cssLayout>
 
-                        <cssLayout stylename="sidebar-nav-item">
-                            <cssLayout stylename="sidebar-nav-link" id="navDiscount">
-                                <cssLayout stylename="sidebar-nav-icon Discount"></cssLayout>
-                                <label stylename="sidebar-nav-text" value="โปรโมชั่น" />
-                            </cssLayout>
-                        </cssLayout>
-
-                        <cssLayout stylename="sidebar-nav-item">
-                            <cssLayout stylename="sidebar-nav-link">
-                                <cssLayout stylename="sidebar-nav-icon report"></cssLayout>
-                                <label stylename="sidebar-nav-text" value="รายงาน"></label>
-                            </cssLayout>
-                        </cssLayout>
-
-                        <cssLayout stylename="sidebar-nav-item">
-                            <cssLayout stylename="sidebar-nav-link">
-                                <cssLayout stylename="sidebar-nav-icon Settings"></cssLayout>
-                                <label stylename="sidebar-nav-text" value="การตั้งค่า" />
-                            </cssLayout>
-                        </cssLayout>
                     </cssLayout>
-
-
+                        <cssLayout stylename="sidebar-footer"><label value="footer" /></cssLayout>
+                    </cssLayout>
                 </cssLayout>
-                <cssLayout stylename="sidebar-footer"><label value="footer" /></cssLayout>
+
+
             </cssLayout>
 
 <!--         MAIN   -->

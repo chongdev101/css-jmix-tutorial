@@ -26,6 +26,23 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
     @Autowired
     private CssLayout sidebar;
 
+    @Subscribe
+    public void onInit(InitEvent event) {
+
+
+//        1.
+        // set data
+
+
+        // display
+
+//        2.
+        // loop -> sidebarNav
+        //        cssLayout =
+    }
+
+
+
 //    @Autowired
 //    private Drawer drawer;
 //    @Autowired
@@ -56,13 +73,7 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
 
     @Subscribe("hambergerMenu")
     public void onHambergerMenuLayoutClick(LayoutClickNotifier.LayoutClickEvent event) {
-        isActive = !isActive;
-
-        if (isActive) {
-            sidebar.addStyleName("is-active");
-        } else {
-            sidebar.removeStyleName("is-active");
-        }
+        _sidebarHandler();
     }
 
     @Autowired
@@ -73,21 +84,48 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
 
     @Subscribe("navHomepage")
     public void onNavHomepageLayoutClick(LayoutClickNotifier.LayoutClickEvent event) {
-        HomeScreen homeScreen = screens.create(HomeScreen.class, OpenMode.THIS_TAB);
-        homeScreen.show();
-//        urlRouting.replaceState(homeScreen);
+        HomeScreen screen = screens.create(HomeScreen.class, OpenMode.THIS_TAB);
+        urlRouting.replaceState(screen);
+        screen.show();
+
+        isActive = false;
+        sidebar.removeStyleName("is-active");
     }
 
     @Subscribe("navProduct")
     public void onNavProductLayoutClick(LayoutClickNotifier.LayoutClickEvent event) {
         ProductScreen screen = screens.create(ProductScreen.class, OpenMode.THIS_TAB);
+        urlRouting.replaceState(screen);
         screen.show();
-//        urlRouting.replaceState(screen);
+
+        isActive = false;
+        sidebar.removeStyleName("is-active");
     }
 
     @Subscribe("navDiscount")
     public void onNavDiscountLayoutClick(LayoutClickNotifier.LayoutClickEvent event) {
         ProductBrowse screen = screens.create(ProductBrowse.class, OpenMode.THIS_TAB);
+        urlRouting.replaceState(screen);
         screen.show();
+
+        isActive = false;
+        sidebar.removeStyleName("is-active");
     }
+
+    @Subscribe("backdropHandler")
+    public void onBackdropHandlerLayoutClick(LayoutClickNotifier.LayoutClickEvent event) {
+        _sidebarHandler();
+    }
+
+    void _sidebarHandler(){
+        isActive = !isActive;
+
+        if (isActive) {
+            sidebar.addStyleName("is-active");
+        } else {
+            sidebar.removeStyleName("is-active");
+        }
+    }
+
+
 }
