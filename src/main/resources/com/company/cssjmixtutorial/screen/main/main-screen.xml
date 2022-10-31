@@ -32,7 +32,7 @@
                         </cssLayout>
 
                         <cssLayout stylename="sidebar-nav-item">
-                            <cssLayout stylename="sidebar-nav-link ">
+                            <cssLayout stylename="sidebar-nav-link" id="navDiscount">
                                 <cssLayout stylename="sidebar-nav-icon Discount"></cssLayout>
                                 <label stylename="sidebar-nav-text" value="โปรโมชั่น" />
                             </cssLayout>

@@ -7,6 +7,8 @@ $sidebar-max: 426px;
 $sidebar-gap: 10px;
 $sidebar-padding: 16px;
 
+$gap: 16px;
+
 .color-pimary {
   color: #2d2d70;
 }
@@ -48,8 +50,8 @@ $sidebar-padding: 16px;
   &.is-active {
     width: $sidebar-max;
 
-    .sidebar-nav{
-        padding: 16px;
+    .sidebar-nav {
+      padding: 16px;
     }
     .sidebar-nav-link {
       gap: 16px;
@@ -92,6 +94,9 @@ $sidebar-padding: 16px;
 
 .pos-esso-main {
   grid-area: main;
+  height: calc(100vh - $header-height);
+  padding: 24px;
+  overflow: auto;
 
   .jmix-workarea {
     display: block;
@@ -180,7 +185,6 @@ $sidebar-padding: 16px;
   flex-direction: column;
   box-shadow: 0px 1px 1px rgba(104, 120, 171, 0.14),
     0px 2px 1px rgba(104, 120, 171, 0.12), 0px 1px 3px rgba(104, 120, 171, 0.2);
-
 }
 .cardHeader {
   padding: 16px;
@@ -237,3 +241,70 @@ $sidebar-padding: 16px;
   background-position: center;
   background-image: url(./icons/Arrow-Sort-Small.png);
 }
+
+
+.layout-screen {
+
+  // div {
+  //   display: block;
+  // }
+  
+  .table-layout {
+    display: flex;
+    flex-direction: column;
+
+    .table {
+      flex: 1;
+      background-color: #f2f2f2;
+    }
+
+    .filters {
+      display: flex;
+      flex-direction: column;
+      gap: $gap;
+      padding: $gap;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: $gap;
+
+
+      .filter-input {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 14px 16px;
+        height: 56px;
+        display: block;
+      }
+
+      button {
+        background: #3750a1;
+        border: 1px solid #3750a1;
+        border-radius: 8px;
+        height: 56px;
+        padding: 16px;
+      }
+    }
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+  .filter-box {
+    white-space: break-spaces;
+    overflow: hidden;
+    display: flex;
+    max-width: fit-content;
+  }
+
+  .empty-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    min-width: 200px;
+  }
+}
+
+

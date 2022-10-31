@@ -1,6 +1,7 @@
 package com.company.cssjmixtutorial.screen.main;
 
 import com.company.cssjmixtutorial.screen.home.HomeScreen;
+import com.company.cssjmixtutorial.screen.product.ProductBrowse;
 import com.company.cssjmixtutorial.screen.product.ProductScreen;
 import io.jmix.ui.ScreenTools;
 import io.jmix.ui.Screens;
@@ -82,5 +83,11 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
         ProductScreen screen = screens.create(ProductScreen.class, OpenMode.THIS_TAB);
         screen.show();
 //        urlRouting.replaceState(screen);
+    }
+
+    @Subscribe("navDiscount")
+    public void onNavDiscountLayoutClick(LayoutClickNotifier.LayoutClickEvent event) {
+        ProductBrowse screen = screens.create(ProductBrowse.class, OpenMode.THIS_TAB);
+        screen.show();
     }
 }

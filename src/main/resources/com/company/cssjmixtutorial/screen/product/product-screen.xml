@@ -2,36 +2,63 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://productScreen.caption">
 
-    <data>
-        <collection id="productsDc"
-                    class="com.company.cssjmixtutorial.entity.Product"
-                    fetchPlan="_local">
-            <loader id="productsLoader">
-                <query>
-                    <![CDATA[select e from product e]]>
-                </query>
-            </loader>
-        </collection>
-    </data>
-    <facets>
-        <dataLoadCoordinator auto="true"/>
-    </facets>
+    <layout spacing="true">
 
-    <layout expand="productsDataGrid">
-        <dataGrid id="productsDataGrid"
-                  dataContainer="productsDc"
-                  width="100%">
-            <actions>
-                <action id="create" type="create"/>
-            </actions>
-            <columns>
-                <column property="id"/>
-                <column property="productCode"/>
-                <column property="productName"/>
-            </columns>
-            <buttonsPanel>
-                <button action="productsDataGrid.create"/>
-            </buttonsPanel>
-        </dataGrid>
+        <cssLayout stylename="layout-screen">
+            <cssLayout stylename="col-left table-layout">
+                <cssLayout stylename="filters">
+                    <cssLayout stylename="filter-row">
+                        <cssLayout stylename="filter-item flex-1">
+                            <label>label 1</label>
+                            <cssLayout stylename="filter-input"></cssLayout>
+                        </cssLayout>
+                        <cssLayout stylename="filter-item flex-1">
+                            <label>label 1</label>
+                            <cssLayout stylename="filter-input"></cssLayout>
+                        </cssLayout>
+                        <cssLayout stylename="filter-item flex-1">
+                            <label>label 1</label>
+                            <cssLayout stylename="filter-input"></cssLayout>
+                        </cssLayout>
+                    </cssLayout>
+
+                    <cssLayout stylename="filter-row">
+                        <cssLayout stylename="filter-item flex-1">
+                            <cssLayout stylename="filter-input"></cssLayout>
+                        </cssLayout>
+                        <cssLayout stylename="filter-item flex-1">
+                            <cssLayout stylename="filter-input"></cssLayout>
+                        </cssLayout>
+                    </cssLayout>
+
+                    <cssLayout stylename="filter-row">
+                        <cssLayout stylename="filter-item flex-1">
+                            <cssLayout stylename="filter-input"></cssLayout>
+                        </cssLayout>
+                        <cssLayout stylename="filter-item flex-1">
+                            <cssLayout stylename="filter-input"></cssLayout>
+                        </cssLayout>
+                    </cssLayout>
+
+                    <cssLayout stylename="filter-row">
+                        <cssLayout stylename="filter-item flex-1">
+                            <cssLayout stylename="filter-input"></cssLayout>
+                        </cssLayout>
+                        <cssLayout stylename="filter-item">
+                            <button caption="button 2"></button>
+                        </cssLayout>
+                        <cssLayout stylename="filter-item">
+                            <button caption="button 3"></button>
+                        </cssLayout>
+                    </cssLayout>
+                </cssLayout>
+                <cssLayout stylename="table" >table</cssLayout>
+            </cssLayout>
+            <cssLayout stylename="col-right">
+                <cssLayout stylename="empty-box"></cssLayout>
+                <cssLayout>text</cssLayout>
+            </cssLayout>
+        </cssLayout>
+
     </layout>
 </window>
